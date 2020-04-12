@@ -38,3 +38,35 @@ $(document).ready(function() {
     $('#map_iframe').addClass('scrolloff');
   });
 });
+
+// custom event triggered when #map enters the viewport
+(function () {
+  $.fn.isInViewport = function() {
+    const elementTop = $(this).offset().top;
+    const elementBottom = elementTop + $(this).outerHeight();
+    const viewportTop = $(window).scrollTop();
+    const viewportBottom = viewportTop + $(window).height();
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+  };
+  
+  let hasShownCount = false
+  let isMapVisible = $("#map").isInViewport()
+
+  $(window).on("resize scroll", onResizeScroll);
+
+  function onResizeScroll() {
+    const howAboutNow = $("#map").isInViewport()
+    if (isMapVisible !== howAboutNow) {
+      isMapVisible = howAboutNow
+      if (isMapVisible && !hasShownCount) {
+        hasShownCount = true
+
+        $(window).trigger({
+          type: "map-visible",
+        });
+
+        $(window).off("resize scroll", onResizeScroll)
+      }
+    }
+  }
+})();

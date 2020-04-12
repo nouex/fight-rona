@@ -219,6 +219,29 @@ hr.small {
     height: 500px;
 }
 
+.bar-container {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+
+  margin-top: 30px;
+}
+
+.total-count {
+  font-weight: bold;
+}
+
+/* https://stackoverflow.com/questions/28457270/c3js-is-there-a-way-to-change-font-size */
+.c3-axis-y text
+{
+  font-size: 15px;
+}
+
+.c3-axis-x text
+{
+  font-size: 15px;
+}
+
 @media(max-width:768px) {
     .map {
         height: 75%;
