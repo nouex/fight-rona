@@ -183,6 +183,9 @@ hr.small {
   width: 600px; /* same as data-width attribute */
   margin-right: auto;
   margin-left: auto;
+
+  margin-top: 75px;
+  margin-bottom: 75px;
 }
 
 /* Portfolio */
@@ -217,6 +220,10 @@ hr.small {
 
 .map {
     height: 500px;
+}
+
+.map > h2 {
+  margin-top: 75px;
 }
 
 .bar-container {
