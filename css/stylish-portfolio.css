@@ -148,6 +148,11 @@ hr.small {
     margin: 5px 5px 0 0;
 }
 
+.opacity-zero {
+  /* visibility: 0 does not work with iframes, this is a workaround */
+  opacity: 0;
+}
+
 /* Header */
 
 .header {
