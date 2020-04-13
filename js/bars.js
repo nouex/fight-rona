@@ -114,7 +114,7 @@ function render() {
     }
   });
 
-  $(window).on("map-visible", () => {
+  $(window).one("map-visible", () => {
     chart.load({
         x: "x",
         columns: [
@@ -137,7 +137,11 @@ function render() {
           step: function () {
             $this.text(Math.ceil(this.Counter).toLocaleString());
           },
-          complete:  () => $(".map h2").addClass("animated tada")
+          complete:  () => {
+            $(".map-subheader").removeClass("invisible")
+              .addClass("animated fadeInLeft")
+            $(".map h2").addClass("animated tada delay-1s")
+          }
         });
     });
   })
