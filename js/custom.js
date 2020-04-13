@@ -39,34 +39,37 @@ $(document).ready(function() {
   });
 });
 
-// custom event triggered when #map enters the viewport
-(function () {
-  $.fn.isInViewport = function() {
-    const elementTop = $(this).offset().top;
-    const elementBottom = elementTop + $(this).outerHeight();
-    const viewportTop = $(window).scrollTop();
-    const viewportBottom = viewportTop + $(window).height();
-    return elementBottom > viewportTop && elementTop < viewportBottom;
-  };
-  
-  let hasShownCount = false
-  let isMapVisible = $("#map").isInViewport()
+// custom event triggered when element enters the viewport
+$.fn.isInViewport = function() {
+  const elementTop = $(this).offset().top;
+  const elementBottom = elementTop + $(this).outerHeight();
+  const viewportTop = $(window).scrollTop();
+  const viewportBottom = viewportTop + $(window).height();
+  return elementBottom > viewportTop && elementTop < viewportBottom;
+};
 
-  $(window).on("resize scroll", onResizeScroll);
+$.fn.triggerOnceWhenVisible = function triggerOnceWhenVisible(eventName) {
+  const that = this
+  // shortcut to when the page loads and it's already in view
+  if (this.isInViewport()) {
+    setTimeout(() => { $(window).trigger({ type: eventName }) }, 0)
+    return
+  }
 
-  function onResizeScroll() {
-    const howAboutNow = $("#map").isInViewport()
-    if (isMapVisible !== howAboutNow) {
-      isMapVisible = howAboutNow
-      if (isMapVisible && !hasShownCount) {
-        hasShownCount = true
+  $(window).on("resize scroll", handler)
 
-        $(window).trigger({
-          type: "map-visible",
-        });
+  function handler() {
+    const isVisible = that.isInViewport()
 
-        $(window).off("resize scroll", onResizeScroll)
-      }
+    if (isVisible) {
+      $(window).trigger({
+        type: eventName,
+      });
+
+      $(window).off("resize scroll", handler)
     }
   }
-})();
+}
+
+$("#map").triggerOnceWhenVisible("map-visible")
+$(".callout").triggerOnceWhenVisible("callout-visible")
