@@ -161,6 +161,7 @@ hr.small {
     width: 100%;
     height: 100%;
     background: url(../img/bg.jpg) no-repeat center center scroll;
+    color: white;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -181,6 +182,42 @@ hr.small {
 
 .service-item {
     margin-bottom: 30px;
+}
+
+.articles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.article {
+  width: 350px;
+  height: 250px;
+  margin: 3px;
+  padding: 45px 12px 20px;
+
+  background-size: cover;
+
+  /* tilt.js */
+  transform-style: preserve-3d;
+}
+
+/* we need a block element for this to work, that's why this div exists */
+.article-title-wrapper {
+  /* tilt.js */
+  transform: translateZ(20px)
+}
+
+.article-title {
+  font-family: 'Abril Fatface', serif;
+  font-size: 1.6em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+
+  box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
+  line-height: 2.2;
 }
 
 .twitter-timeline-wrapper {
