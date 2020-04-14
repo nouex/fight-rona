@@ -168,6 +168,20 @@ hr.small {
     -o-background-size: cover;
 }
 
+.header h1 {
+  margin: 0 auto; /* center horizontally */
+  max-width: 35%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.header h3 {
+  margin: 10px auto 0; /* center horizontally */
+  max-width: 30%;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 /* About */
 
 .about {
