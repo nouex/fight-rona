@@ -139,8 +139,8 @@ function render() {
           },
           complete:  () => {
             $(".map-subheader").removeClass("invisible")
-              .addClass("animated fadeInLeft")
-            $(".map h2").addClass("animated tada delay-1s")
+              .addClass("animated fadeInLeft delay-1s")
+            $(".map h2").addClass("animated tada")
           }
         });
     });
