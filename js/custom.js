@@ -72,4 +72,4 @@ $.fn.triggerOnceWhenVisible = function triggerOnceWhenVisible(eventName) {
 }
 
 $("#map").triggerOnceWhenVisible("map-visible")
-$(".callout").triggerOnceWhenVisible("callout-visible")
+// $(".callout").triggerOnceWhenVisible("callout-visible")
