@@ -232,14 +232,14 @@ hr.small {
 
 .article-title {
   font-family: 'Abril Fatface', serif;
-  font-size: 1.6em;
+  font-size: 1.4em;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: capitalize;
 
   box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.7);
   background-color: rgba(0, 0, 0, 0.7);
-  line-height: 2.2;
+  line-height: 2.4;
 }
 
 .twitter-timeline-wrapper {
