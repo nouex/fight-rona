@@ -196,6 +196,10 @@ hr.small {
     padding: 50px 0;
 }
 
+.about q {
+  font-size: 22px;
+}
+
 /* Services */
 
 .services {
