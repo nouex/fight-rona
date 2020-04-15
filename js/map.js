@@ -9,13 +9,13 @@ const countries = [
 ]
 
 const colors = [
-  "#003399",
-  "#489a34",
-  "#facc33",
-  "#cd3c33",
-  "#99cccc",
-  "#f39731",
-  "#3ca5df"
+  "#003f5c",
+  "#374c80",
+  "#7a5195",
+  "#bc5090",
+  "#ef5675",
+  "#ff764a",
+  "#ffa600"
 ]
 
 const promises = countries.map(([code, name]) => {
@@ -113,6 +113,9 @@ function render(largestRecovered) {
     },
     transition: {
       duration: 4000
+    },
+    padding: {
+      left: 65
     }
   });
 
