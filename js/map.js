@@ -64,10 +64,12 @@ $.when(...promises).done((...results) => {
     countryNames.push(country)
   });
 
-  render()
+  const largestRecovered = Math.max(...recoveredArr)
+
+  render(largestRecovered)
 })
 
-function render() {
+function render(largestRecovered) {
   var chart = c3.generate({
     bindto: ".bar-container",
     data: {
@@ -91,7 +93,7 @@ function render() {
           height: 130
       },
       y: {
-        max: 80000,
+        max: largestRecovered + +("5" + "0".repeat(String(largestRecovered).length -2)),
         min: 7500,
         tick: {
           // https://stackoverflow.com/a/9461657/3280654
