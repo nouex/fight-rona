@@ -169,7 +169,7 @@ hr.small {
 }
 
 .header h1 {
-  margin: 0 auto; /* center horizontally */
+  margin: 0 auto 20px; /* center horizontally */
   max-width: 35%;
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.8);
@@ -177,7 +177,7 @@ hr.small {
 
 .header h3 {
   margin: 10px auto 0; /* center horizontally */
-  max-width: 30%;
+  max-width: 35%;
   padding: 5px;
   background-color: rgba(0, 0, 0, 0.8);
 }
@@ -234,7 +234,6 @@ hr.small {
   font-family: 'Abril Fatface', serif;
   font-size: 1.4em;
   font-weight: 600;
-  letter-spacing: 1px;
   text-transform: capitalize;
 
   box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.7);
@@ -258,16 +257,47 @@ hr.small {
     padding: 50px 0;
 }
 
+.portfolio-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
 .portfolio-item {
-    margin-bottom: 30px;
+    margin: 30px 20px;
+    /* give it a circle shape */
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+
+    background-size: cover;
 }
 
-.img-portfolio {
-    margin: 0 auto;
+.portfolio-item:hover {
+  opacity: 0.8;
 }
 
-.img-portfolio:hover {
-    opacity: 0.8;
+.portfolio-item-title {
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  max-width: 85%;
+  /* center horizontally */
+  margin: 0 auto;
+  /* center vertically */
+  position: relative;
+  top: 42%;
+
+  font-size: 28px;
+}
+
+.portfolio-item-title--light {
+  color: black;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.portfolio-item-title--dark {
+  color: white;
+  background-color: rgba(0, 0, 0, 1);
 }
 
 /* Call to Action */
