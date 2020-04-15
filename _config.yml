@@ -9,16 +9,15 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
 
 # User setting
-owner:
-email:
+owner: xoxo
+email: amaurialfaro10@gmail.com
 facebook_username:
 twitter_username:
-github_username:
+github_username: baaae/fight-rona
 address:
   - line:
   - line:
-  # Feel free to add more lines here 
-telephone:
+  # Feel free to add more lines here
 copyright:
 
 # API settings
