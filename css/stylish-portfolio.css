@@ -223,6 +223,7 @@ hr.small {
   padding: 45px 12px 20px;
 
   background-size: cover;
+  color: white;
 
   /* tilt.js */
   transform-style: preserve-3d;
