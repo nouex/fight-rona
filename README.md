@@ -7,3 +7,4 @@
 * use the same font-family throughout
 * clickable area for circles overflows
 * there is no spacing between lines in .portfolio
+* add links to articles
