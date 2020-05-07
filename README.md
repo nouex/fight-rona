@@ -12,14 +12,16 @@
 4. browse to http://localhost:4000
 
 ...
-## TODO
-* make it responsive (dev WG)
+## Checklist
+### Features
+* create a mobile version
+* add more articles
+* web accessibility https://achecker.ca/checker/index.php
+* basic SEO https://moz.com/blog/the-ultimate-guide-to-seo-meta-tagsb
+* add new #DoingMyPart section
+
+### Bugs
 * after an article is hovered it loses it's margin
-* ~~use variables when setting limits on bar graph~~
 * use the same font-family throughout
 * clickable area for circles overflows
-* there is no spacing between lines in .portfolio (dev WG)
-* ~~add links to articles~~
-* accessibility (dev WG)
-* SEO (dev WG)
-* start thinking about the #DoingMyPart collage using WebFlow
+* there is no spacing between lines in .portfolio
