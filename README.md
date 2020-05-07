@@ -7,6 +7,7 @@
 ### Compiling
 1. make sure you're in the project directory
 2. `gem install jekyll bundler` (you only need to do this once)
+2. `bundle install` (same thing, you only need to do this once)
 3. `bundle exec jekyll serve`
 4. browse to http://localhost:4000
 
