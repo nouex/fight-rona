@@ -11,17 +11,18 @@
 3. `bundle exec jekyll serve`
 4. browse to http://localhost:4000
 
-...
 ## Checklist
 ### Features
-* create a mobile version
-* add more articles
-* web accessibility https://achecker.ca/checker/index.php
-* basic SEO https://moz.com/blog/the-ultimate-guide-to-seo-meta-tagsb
-* add new #DoingMyPart section
+- [ ] create a mobile version
+- [ ] add more articles
+- [ ] web accessibility https://achecker.ca/checker/index.php
+- [ ] basic SEO https://moz.com/blog/the-ultimate-guide-to-seo-meta-tagsb
+- [ ] add new #DoingMyPart section, see `collage` branch for example
+- [ ] turn the articles section into a [carousel](https://www.w3schools.com/bootstrap/bootstrap_carousel.asp)
 
-### Bugs
-* after an article is hovered it loses it's margin
-* use the same font-family throughout
-* clickable area for circles overflows
-* there is no spacing between lines in .portfolio
+### Bugs and Small Changes
+- [ ] someone mentioned the blue background doesn't look good, especially with the articles, try something else 🤷
+- [ ] after an article is hovered it loses it's margin
+- [ ] use the same font-family throughout
+- [ ] clickable area for circles overflows
+- [ ] there is no spacing between lines in .portfolio
