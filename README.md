@@ -16,7 +16,7 @@
 - [ ] create a mobile version
 - [ ] add more articles from here https://docs.google.com/document/d/1VJfE7tEGbUoWmwQ4-fqd-LSPWXjJmUkhfxLbnTK-ABg/edit?ts=5eb56aa1
 - [ ] web accessibility https://achecker.ca/checker/index.php
-- [ ] basic SEO https://moz.com/blog/the-ultimate-guide-to-seo-meta-tagsb
+- [ ] basic SEO https://moz.com/blog/the-ultimate-guide-to-seo-meta-tagsb (Zach)
 - [ ] add new #DoingMyPart section, see `collage` branch for example
 - [ ] turn the articles section into a [carousel](https://www.w3schools.com/bootstrap/bootstrap_carousel.asp)
 
