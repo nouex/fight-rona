@@ -19,6 +19,7 @@
 - [ ] basic SEO https://moz.com/blog/the-ultimate-guide-to-seo-meta-tagsb (Zach)
 - [ ] add new #DoingMyPart section, see `collage` branch for example
 - [ ] turn the articles section into a [carousel](https://www.w3schools.com/bootstrap/bootstrap_carousel.asp) (John)
+- [ ] add floating likes (Jacob)
 
 ### Bugs and Small Changes
 - [ ] someone mentioned the blue background doesn't look good, especially with the articles, try something else 🤷
@@ -26,3 +27,4 @@
 - [ ] use the same font-family throughout
 - [ ] clickable area for circles overflows
 - [ ] there is no spacing between lines in .portfolio
+- [ ] bar graph is all weird
