@@ -13,7 +13,6 @@
 
 ## Checklist
 ### Features
-- [ ] create a mobile version
 - [ ] add more articles from here https://docs.google.com/document/d/1VJfE7tEGbUoWmwQ4-fqd-LSPWXjJmUkhfxLbnTK-ABg/edit?ts=5eb56aa1
 - [ ] web accessibility https://achecker.ca/checker/index.php
 - [ ] basic SEO https://moz.com/blog/the-ultimate-guide-to-seo-meta-tagsb (Zach)
@@ -22,6 +21,7 @@
 - [ ] add floating likes (Jacob)
 
 ### Bugs and Small Changes
+- [ ] make the first section -- about.html -- mobile friendly
 - [ ] someone mentioned the blue background doesn't look good, especially with the articles, try something else 🤷
 - [ ] after an article is hovered it loses it's margin
 - [ ] use the same font-family throughout
