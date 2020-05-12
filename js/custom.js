@@ -54,5 +54,8 @@ $.fn.triggerOnceWhenVisible = function triggerOnceWhenVisible(eventName) {
   }
 }
 
-$("#map").triggerOnceWhenVisible("map-visible")
-// $(".callout").triggerOnceWhenVisible("callout-visible")
+// wait for scripts to load that will subscribe to this event
+$(window).one("load", () => {
+  $("#map").triggerOnceWhenVisible("map-visible")
+  // $(".callout").triggerOnceWhenVisible("callout-visible")
+})
