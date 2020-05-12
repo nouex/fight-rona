@@ -21,10 +21,7 @@
 - [ ] add floating likes (Jacob)
 
 ### Bugs and Small Changes
-- [ ] make the first section -- about.html -- mobile friendly
 - [ ] someone mentioned the blue background doesn't look good, especially with the articles, try something else 🤷
 - [ ] after an article is hovered it loses it's margin
-- [ ] use the same font-family throughout
 - [ ] clickable area for circles overflows
 - [ ] there is no spacing between lines in .portfolio
-- [ ] bar graph is all weird
