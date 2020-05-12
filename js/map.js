@@ -93,11 +93,12 @@ function render(largestRecovered) {
           height: 130
       },
       y: {
-        max: largestRecovered + (largestRecovered * 0.12),
+        max: largestRecovered + (largestRecovered * 0.10),
         min: 0,
         tick: {
           // https://stackoverflow.com/a/9461657/3280654
-          format: num => Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num)
+          format: num => Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(0)) + 'k' : Math.sign(num)*Math.abs(num),
+          count: 6,
         },
         padding: {
           top: 0, bottom: 0
@@ -118,7 +119,8 @@ function render(largestRecovered) {
       duration: 4000
     },
     padding: {
-      left: 65
+      left: 65,
+      right: 30
     }
   });
 

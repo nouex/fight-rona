@@ -427,6 +427,19 @@ hr.small {
   font-size: 15px;
 }
 
+/* Mobile L */
+@media only screen and (max-width: 425px) {
+  .c3-axis-y text
+    {
+      font-size: 10px;
+    }
+
+  .c3-axis-x text
+    {
+      font-size: 10px;
+    }
+}
+
 @media(max-width:768px) {
     .map {
         height: 75%;
