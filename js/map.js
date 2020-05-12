@@ -93,11 +93,14 @@ function render(largestRecovered) {
           height: 130
       },
       y: {
-        max: largestRecovered + +("5" + "0".repeat(String(largestRecovered).length -2)),
-        min: 7500,
+        max: largestRecovered + (largestRecovered * 0.12),
+        min: 0,
         tick: {
           // https://stackoverflow.com/a/9461657/3280654
           format: num => Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num)
+        },
+        padding: {
+          top: 0, bottom: 0
         }
       }
     },
