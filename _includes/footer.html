@@ -16,11 +16,14 @@
         <br>
         <ul class="list-inline">
           <li>
-            <a href="https://github.com/{{ site.github_username }}"><i class="fa fa-github fa-fw fa-3x"></i></a>
+            <!-- I've added aria-label="..." to give this link an invisible discernable name -->
+            <a href="https://github.com/{{ site.github_username }}" aria-label="https://github.com/{{ site.github_username }}"><i class="fa fa-github fa-fw fa-3x"></i></a>
           </li>
         </ul>
         <hr class="small">
-        <p class="text-muted">Copyright &copy; {{ site.copyright }} 20{{ site.time | date: '%y' }}</p>
+        <!-- changed class from text-muted to copy -->
+        <!-- This improves the accessibility -->
+        <p class="copy">Copyright &copy; {{ site.copyright }} 20{{ site.time | date: '%y' }}</p>
       </div>
     </div>
   </div>

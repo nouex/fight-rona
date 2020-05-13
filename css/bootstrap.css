@@ -1338,8 +1338,9 @@ mark,
 .text-capitalize {
   text-transform: capitalize;
 }
-.text-muted {
-  color: #777;
+/* Changed this to fix accessibility */
+.copy {
+  color: gray;
 }
 .text-primary {
   color: #337ab7;
