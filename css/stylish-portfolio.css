@@ -338,13 +338,11 @@ hr.small {
 }
 
 /* https://stackoverflow.com/questions/28457270/c3js-is-there-a-way-to-change-font-size */
-.c3-axis-y text
-{
+.c3-axis-y text {
   font-size: 15px;
 }
 
-.c3-axis-x text
-{
+.c3-axis-x text {
   font-size: 15px;
 }
 
@@ -363,4 +361,111 @@ hr.small {
 
 footer {
     padding: 100px 0;
+}
+
+/* Styling for the Show Your Support button */
+#heart-container {
+    position: relative;
+    width: 100%;
+    padding: 40px 0 0 0;
+}
+#heart-clicker {
+    padding-left: 0;
+    width: 4.4em;
+    margin-bottom: 2em;
+    overflow: hidden;
+    transition: width 0.5s ease-in-out 0.3s, margin 0.5s linear 0s;
+}
+#heart-clicker > p.first-p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: rgba(0,0,0,0);
+    margin: 0;
+    height: 3.2em;
+    padding: 1em 0;
+    width: 13em;
+    transition: all 0.5s;
+    transition-delay: 0.3s;
+}
+#heart-clicker > p.first-p + p {
+    text-align: right;
+    width: 12em;
+    transition: all 0.5s;
+    transition-delay: 0s;
+    color: rgba(0,0,0,0);
+    transition-timing-function: linear;
+    height: 0em;
+    padding: 0;
+    margin: 0;
+}
+#heart-clicker:hover > p.first-p + p {
+    transition-delay: 0.3s;
+    color: rgba(0,0,0,1);
+    height: 2em;
+}
+#heart-clicker:hover > p.first-p {
+    transition-delay: 0s;
+    color: rgba(0,0,0,1);
+}
+#heart-clicker:hover {
+    width: 15em;
+    margin-bottom: 0;
+    transition: width 0.5s ease-in-out 0s, margin 0.5s linear 0.3s;
+}
+#heart-clicker > p.first-p::before {
+    content: '❤ ';
+    color: black;
+}
+.heart {
+    z-index : 999;
+    animation : heartfade 6s linear;
+    position : fixed;
+}
+.heart:before, .heart:after {
+    content : "";
+    background-color : #fc2a62;
+    position : absolute;
+    height : 30px;
+    width : 45px;
+    border-radius : 15px 0px 0px 15px;
+}
+.heart:before {
+    transform : rotate(45deg);
+}
+.heart:after {
+    left : 10.5px;
+    transform : rotate(135deg);
+}
+
+@keyframes heartfade {
+    0% {
+        opacity : 1;
+    }
+    50% {
+        opacity : 0;
+    }
+}
+
+/* Making this webpage Mobile Friendly */
+@media screen and (max-width: 380px) {
+    .header h1, .header h3 {
+        max-width: 70%;
+    }
+    div.articles > a, div.portfolio-items > a {
+        transform: scale(0.8);
+    }
+    section#map > div.bar-container > svg {
+        height: 255px;
+    }
+    g.c3-axis-y > g.tick:nth-of-type(odd) {
+        display: none;
+    }
+}
+@media screen and (min-width: 381px) and (max-width: 425px) {
+    .header h1, .header h3 {
+        max-width: 60%;
+    }
+    g.c3-axis-y > g.tick:nth-of-type(odd) {
+        display: none;
+    }
 }
