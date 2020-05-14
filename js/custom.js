@@ -76,9 +76,24 @@ $("#map").triggerOnceWhenVisible("map-visible")
 
 
 // JS stuff for the "Show Your Support Button"
-var numHearts = 0;
-var heartsChange = 0;
+var myJSON
 $.getJSON("../js/heart.json", function(data) {
+    myJSON = data
+    setTimeout(() => {
+        myJSON.hearts++
+        console.log(myJSON)
+        console.log(data)
+    }, 2000);
+})
+
+var xhr = new XMLHttpRequest()
+xhr.open("PUT","../js/heart.json",true)
+xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8')
+xhr.send(JSON.stringify(myJSON))
+var numHearts = 0
+var heartsChange = 0
+$.getJSON("../js/heart.json", function(data) {
+    console.log(data)
     numHearts = data.hearts
     $("#num-hearts").text(data.hearts)
 })
@@ -133,6 +148,7 @@ function frame() {
 function NewHeart() {
     heartsChange++;
     numHearts++;
+    DoJsonStuffToShowHeartNumbers()
     $("#num-hearts").text(numHearts)
 
     generateHeart(
@@ -146,9 +162,8 @@ function NewHeart() {
 
 // Set an interval to load the JSON every 5 minutes
 DoJsonStuffToShowHeartNumbers()
-var heartLoadInterval = setInterval(DoJsonStuffToShowHeartNumbers, 300000)
+//var heartLoadInterval = setInterval(DoJsonStuffToShowHeartNumbers, 30000)
 function DoJsonStuffToShowHeartNumbers() {
-    console.log("DoJsonStuff...() is running")
     $.ajax("../js/heart.json", function(data) {
         let tempHearts = data.hearts
         if (data.hearts == (numHearts - heartsChange)) {
@@ -162,5 +177,4 @@ function DoJsonStuffToShowHeartNumbers() {
         }
         $("#num-hearts").text(data.hearts)
     })
-    console.log("DoJsonStuff...() is stopping")
 }
