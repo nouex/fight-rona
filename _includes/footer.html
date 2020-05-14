@@ -2,7 +2,10 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-10 col-lg-offset-1 text-center">
-        <h4><strong>{{ site.owner }}</strong>
+        <h4>
+          <a href="https://www.facebook.com/{{ site.facebook_group }}" aria-label="A BYUI I-Serve Project" target="blank">
+            A BYU-I I-Serve Project
+          </a> 
         </h4>
         <p>
           {% for address in site.address %}
@@ -10,7 +13,8 @@
           {% endfor %}
         </p>
         <ul class="list-unstyled">
-          <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+          <li>
+            <i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:{{ site.email }}">{{ site.email }}</a>
           </li>
         </ul>
         <br>
