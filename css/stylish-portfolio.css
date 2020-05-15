@@ -216,7 +216,13 @@ hr.small {
 }
 
 .about q {
+  display: block; /* so that we may set a bottom margin */
+  margin-bottom: 30px;
   font-size: 22px;
+}
+
+.about + p {
+  margin-bottom: 0; /* override bottom margin put on by .lead */
 }
 
 /* Mobile L */
@@ -373,8 +379,8 @@ hr.small {
 /* Map */
 
 .map {
-    height: 500px;
-    padding-top: 20px;
+    height: 600px;
+    padding-top: 75px;
 }
 
 .map-header {
