@@ -245,42 +245,23 @@ hr.small {
     margin-bottom: 30px;
 }
 
-.articles {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+.carousel + .carousel {
+  margin-top: 50px;
 }
 
 .article {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
 
-  width: 80vw;
-  min-width: 300px;
-  max-width: 900px;
-  height: 80vw;
-  max-height: 500px;
+  width: 350px;
+  height: 250px;
   margin: 3px;
   padding: 45px 12px 20px;
 
-  background-position: 50% 0%;
   background-size: cover;
   color: white;
-
-  /* tilt.js */
-  transform-style: preserve-3d;
-}
-
-/* we need a block element for this to work, that's why this div exists */
-.article-title-wrapper {
-  /* tilt.js */
-  /* transform: translateZ(20px) */
-  margin: 2em;
 }
 
 .article-title {
-  /* font-family: 'Abril Fatface', serif; */
+  font-family: 'Abril Fatface', serif;
   font-size: 1.4em;
   font-weight: 600;
   text-transform: capitalize;
@@ -288,6 +269,28 @@ hr.small {
   box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.7);
   background-color: rgba(0, 0, 0, 0.7);
   line-height: 2.4;
+}
+
+/* Mobile L */
+@media(max-width: 425px) {
+    .article {
+        width: 170px; /* NOTE: dimensions change */
+        height: 170px;
+        margin: 0 2px;
+        padding: 20px 10px;
+        font-size: 10px;
+    }
+
+    .article-title {
+      /* font-family: 'Abril Fatface', serif; */
+      font-size: 1.3em;
+      font-weight: 600;
+      text-transform: capitalize;
+
+      box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.7);
+      background-color: rgba(0, 0, 0, 0.7);
+      line-height: 2.3;
+    }
 }
 
 .twitter-timeline-wrapper {

@@ -59,3 +59,11 @@ $(window).one("load", () => {
   $("#map").triggerOnceWhenVisible("map-visible")
   // $(".callout").triggerOnceWhenVisible("callout-visible")
 })
+
+// carousel settings
+$(document).ready(function () {
+  $('.carousel').flickity({
+    cellAlign: 'left',
+    groupCells: true
+  });
+})
