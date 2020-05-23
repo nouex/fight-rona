@@ -209,7 +209,10 @@ const bucket = new AWS.S3({
  * and then update the server with the extra counts to add.
  */
 function addToClickCount(extraClicks) {
-  // ...
+  // tell the server how many clicks to add to the total click count.
+  // do this by sending an http request to this url, http://ec2-54-193-176-112.us-west-1.compute.amazonaws.com:3000/
+  // and adding a query by the name of `clicks` with the value being `extraClicks`
+  // example url with query http://ec2-54-193-176-112.us-west-1.compute.amazonaws.com:3000/?clicks=7
 }
 
 async function getClickCount() {
