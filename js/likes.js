@@ -4,7 +4,8 @@ const duration = 3000
 const speed = 0.5
 const cursorXOffset = 0
 const cursorYOffset = -5
-const before = Date.now()
+const hearts = []
+let before = Date.now()
 
 requestAnimationFrame(frame)
 
