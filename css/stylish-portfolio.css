@@ -370,13 +370,13 @@ footer {
     padding: 40px 0 0 0;
 }
 #heart-clicker {
+    overflow: visible;
     padding-left: 0;
     width: 4.4em;
     margin-bottom: 2em;
-    overflow: hidden;
     transition: width 0.5s ease-in-out 0.3s, margin 0.5s linear 0s;
 }
-#heart-clicker > p.first-p {
+/* #heart-clicker > p.first-p {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     color: rgba(0,0,0,0);
@@ -415,11 +415,22 @@ footer {
 #heart-clicker > p.first-p::before {
     content: '❤ ';
     color: black;
+} */
+
+.heart2 {
+  display: block;
+  height: 80px;
+  width: 80px;
+
+  z-index: 9999;
+  /* animation : heartfade 6s linear; */
+  position : relative;
 }
+
 .heart {
     z-index : 999;
     animation : heartfade 6s linear;
-    position : fixed;
+    position : relative;
 }
 .heart:before, .heart:after {
     content : "";
@@ -433,7 +444,7 @@ footer {
     transform : rotate(45deg);
 }
 .heart:after {
-    left : 10.5px;
+    left : 40.5px;
     transform : rotate(135deg);
 }
 

@@ -1,15 +1,13 @@
  // https://medium.com/front-end-weekly/how-to-fill-your-website-with-lovely-valentines-hearts-d30fe66d58eb
 
 const duration = 3000
-const speed = 0.5
+const speed = 4
 const cursorXOffset = 0
 const cursorYOffset = -5
 const hearts = []
 let before = Date.now()
 
 requestAnimationFrame(frame)
-
-consthearts = []
 
 // TODO: authenticate!!!
 AWS.config.region = 'us-west-1'
@@ -26,23 +24,28 @@ const bucket = new AWS.S3({
 });
 
 function generateHeart(x, y, xBound, xStart, scale) {
-    const heart = $("<div class=\"heart\"></div>").appendTo("#heart-clicker").get(0)
+    const heart = $('<img src="/img/heart.svg" class="heart2">')
+                    .appendTo("#heart-clicker")
+                    .get(0)
 
     heart.time = duration
-    heart.x = x
-    heart.y = y
+    heart.x_ = x
+    heart.y_ = y
     heart.bound = xBound
     heart.direction = xStart
-    heart.style.left = heart.x + "px"
-    heart.style.top = heart.y + "px"
+    heart.style.left = heart.x_ + "px"
+    heart.style.top = heart.y_ + "px"
     heart.scale = scale
     heart.style.transform = "scale(" + scale + "," + scale + ")"
 
+    console.log(heart, heart.x_, heart.y_, x, y)
+
     hearts.push(heart)
-    
+
     return heart
 }
 
+// TODO: only request animation frame if we hearts.length !== 0
 function frame() {
     var current = Date.now()
     var deltaTime = current - before
@@ -51,23 +54,26 @@ function frame() {
         var heart = hearts[i]
         heart.time -= deltaTime
         if (heart.time > 0) {
-            heart.y -= speed
-            heart.style.top = heart.y + "px"
-            heart.style.left = heart.x + heart.direction * heart.bound * Math.sin(heart.y * heart.scale / 30) + "px"
+            heart.y_ -= speed
+            heart.style.top = heart.y_ + "px"
+            heart.style.left = heart.x_ + heart.direction * heart.bound * Math.sin(heart.y_ * heart.scale / 30) + "px"
         }
         else {
             heart.parentNode.removeChild(heart)
             hearts.splice(i, 1)
         }
     }
+    requestAnimationFrame(frame)
 }
 
 // Called every time some user clicks the "heart-clicker" button
 function NewHeart() {
     generateHeart(
-        (window.event.clientX),
-        (window.event.clientY),
-        (30 + Math.random() * 20),
+        // (window.event.clientX),
+        // (window.event.clientY),
+        0,
+        0,
+        (15 + Math.random() * 20),
         (1 - Math.round(Math.random()) * 2),
         (Math.random() * Math.random() * 0.8 + 0.2)
     )
