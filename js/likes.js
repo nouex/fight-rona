@@ -1,10 +1,25 @@
-/** Start of the code from the tutorial from
- * https://medium.com/front-end-weekly/how-to-fill-your-website-with-lovely-valentines-hearts-d30fe66d58eb **/
+ // https://medium.com/front-end-weekly/how-to-fill-your-website-with-lovely-valentines-hearts-d30fe66d58eb
+
 const duration = 3000
 const speed = 0.5
 const cursorXOffset = 0
 const cursorYOffset = -5
-var hearts = []
+consthearts = []
+
+// TODO: authenticate!!!
+AWS.config.region = 'us-west-1'
+AWS.config.credentials = new AWS.Credentials({
+    accessKeyId: "AKIAZDBDBAHOLE5TGKGF",
+    secretAccessKey: "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"
+});
+
+const bucket = new AWS.S3({
+    params: {
+        Bucket: "fight-rona",
+        Key: "click-count.json"
+    }
+});
+
 function generateHeart(x, y, xBound, xStart, scale) {
     var heart = document.createElement("DIV")
     heart.setAttribute('class', 'heart')
@@ -22,8 +37,11 @@ function generateHeart(x, y, xBound, xStart, scale) {
     hearts.push(heart)
     return heart
 }
+
+
 var before = Date.now()
 var id = setInterval(frame, 5)
+
 function frame() {
     var current = Date.now()
     var deltaTime = current - before
@@ -42,7 +60,6 @@ function frame() {
         }
     }
 }
-/** End of code from the tutorial (link given above) **/
 
 // Called every time some user clicks the "heart-clicker" button
 function NewHeart() {
@@ -59,39 +76,6 @@ function NewHeart() {
         (Math.random() * Math.random() * 0.8 + 0.2)
     )
 }
-
-// Set an interval to load the JSON every 5 minutes
-DoJsonStuffToShowHeartNumbers()
-//var heartLoadInterval = setInterval(DoJsonStuffToShowHeartNumbers, 30000)
-function DoJsonStuffToShowHeartNumbers() {
-    $.ajax("../js/heart.json", function(data) {
-        let tempHearts = data.hearts
-        if (data.hearts == (numHearts - heartsChange)) {
-            data.hearts = numHearts
-        }
-        else if (data.hearts < (numHearts - heartsChange)) {
-            data.heartLog.push(new Date().toDateString()+" - ERROR: JSON value less than change.")
-        }
-        else {
-            data.hearts = (tempHearts + heartsChange)
-        }
-        $("#num-hearts").text(data.hearts)
-    })
-}
-
-// TODO: authenticate!!!
-AWS.config.region = 'us-west-1'
-AWS.config.credentials = new AWS.Credentials({
-    accessKeyId: "AKIAZDBDBAHOLE5TGKGF",
-    secretAccessKey: "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"
-});
-
-const bucket = new AWS.S3({
-    params: {
-        Bucket: "fight-rona",
-        Key: "click-count.json"
-    }
-});
 
 /**
  * The likes feature works like this, the user clicks the likes btn repeatedly
