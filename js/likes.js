@@ -4,6 +4,10 @@ const duration = 3000
 const speed = 0.5
 const cursorXOffset = 0
 const cursorYOffset = -5
+const before = Date.now()
+
+requestAnimationFrame(frame)
+
 consthearts = []
 
 // TODO: authenticate!!!
@@ -37,10 +41,6 @@ function generateHeart(x, y, xBound, xStart, scale) {
     hearts.push(heart)
     return heart
 }
-
-
-var before = Date.now()
-var id = setInterval(frame, 5)
 
 function frame() {
     var current = Date.now()
