@@ -26,9 +26,8 @@ const bucket = new AWS.S3({
 });
 
 function generateHeart(x, y, xBound, xStart, scale) {
-    var heart = document.createElement("DIV")
-    heart.setAttribute('class', 'heart')
-    document.body.appendChild(heart)
+    const heart = $("<div class=\"heart\"></div>").appendTo("#heart-clicker").get(0)
+
     heart.time = duration
     heart.x = x
     heart.y = y
@@ -38,8 +37,9 @@ function generateHeart(x, y, xBound, xStart, scale) {
     heart.style.top = heart.y + "px"
     heart.scale = scale
     heart.style.transform = "scale(" + scale + "," + scale + ")"
-    if (hearts == null) hearts = []
+
     hearts.push(heart)
+    
     return heart
 }
 
