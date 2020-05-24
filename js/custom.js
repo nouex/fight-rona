@@ -226,6 +226,6 @@ async function getClickCount() {
   }
 
   const count =  JSON.parse(data.Body.toString("utf-8")).count
-  console.log("getClickCount() count =>", count")
+  console.log("getClickCount() count =>", count)
   return +count
 }
