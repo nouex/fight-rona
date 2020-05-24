@@ -64,11 +64,6 @@ function frame() {
 
 // Called every time some user clicks the "heart-clicker" button
 function NewHeart() {
-    heartsChange++;
-    numHearts++;
-    DoJsonStuffToShowHeartNumbers()
-    $("#num-hearts").text(numHearts)
-
     generateHeart(
         (window.event.clientX),
         (window.event.clientY),
@@ -76,6 +71,7 @@ function NewHeart() {
         (1 - Math.round(Math.random()) * 2),
         (Math.random() * Math.random() * 0.8 + 0.2)
     )
+    $("#num-hearts").text(hearts.length)
 }
 
 /**
