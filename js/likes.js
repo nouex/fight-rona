@@ -1,84 +1,78 @@
- // https://medium.com/front-end-weekly/how-to-fill-your-website-with-lovely-valentines-hearts-d30fe66d58eb
-
-const duration = 3000
-const speed = 4
-const cursorXOffset = 0
-const cursorYOffset = -5
+const DURATION = 3000
+const SPEED = 3
 const hearts = []
 let before = Date.now()
 
 requestAnimationFrame(frame)
 
-// TODO: authenticate!!!
-AWS.config.region = 'us-west-1'
-AWS.config.credentials = new AWS.Credentials({
-    accessKeyId: "AKIAZDBDBAHOLE5TGKGF",
-    secretAccessKey: "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"
-});
+function generateHeart(xBound, xDirection, xStart) {
+    const $heart = $('<img src="/img/heart.svg" class="heart2">')
+                    .appendTo(".heart2-clicker")
 
-const bucket = new AWS.S3({
-    params: {
-        Bucket: "fight-rona",
-        Key: "click-count.json"
-    }
-});
+    $heart.data("time", DURATION)
+    $heart.data("x", xStart)
+    $heart.data("y", 0)
+    $heart.data("bound", xBound)
+    $heart.data("direction", xDirection)
+    $heart.get(0).style.left = xStart + "px"
+    $heart.get(0).style.top = "0px"
 
-function generateHeart(x, y, xBound, xStart, scale) {
-    const heart = $('<img src="/img/heart.svg" class="heart2">')
-                    .appendTo("#heart-clicker")
-                    .get(0)
+    hearts.push($heart)
 
-    heart.time = duration
-    heart.x_ = x
-    heart.y_ = y
-    heart.bound = xBound
-    heart.direction = xStart
-    heart.style.left = heart.x_ + "px"
-    heart.style.top = heart.y_ + "px"
-    heart.scale = scale
-    heart.style.transform = "scale(" + scale + "," + scale + ")"
-
-    console.log(heart, heart.x_, heart.y_, x, y)
-
-    hearts.push(heart)
-
-    return heart
+    return $heart
 }
 
 // TODO: only request animation frame if we hearts.length !== 0
 function frame() {
-    var current = Date.now()
-    var deltaTime = current - before
+    const current = Date.now()
+    const deltaTime = current - before
+
     before = current
+
     for (i in hearts) {
-        var heart = hearts[i]
-        heart.time -= deltaTime
-        if (heart.time > 0) {
-            heart.y_ -= speed
-            heart.style.top = heart.y_ + "px"
-            heart.style.left = heart.x_ + heart.direction * heart.bound * Math.sin(heart.y_ * heart.scale / 30) + "px"
+        const $heart = hearts[i]
+        const heartNode = $heart.get(0)
+
+        $heart.data("time", $heart.data("time") - deltaTime)
+        if ($heart.data("time") > 0) {
+            $heart.data("y", $heart.data("y") - SPEED)
+            heartNode.style.top = $heart.data("y") + "px"
+            heartNode.style.left = $heart.data("x") + $heart.data("direction") * $heart.data("bound") * Math.sin($heart.data("y") * 0.6 / 30) + "px"
         }
         else {
-            heart.parentNode.removeChild(heart)
+            heartNode.parentNode.removeChild(heartNode)
             hearts.splice(i, 1)
         }
     }
+
     requestAnimationFrame(frame)
 }
 
-// Called every time some user clicks the "heart-clicker" button
-function NewHeart() {
+const HEART_CICKER_WIDTH = 80
+// TODO: move this out to custom.js
+$(document).ready(() => {
+  $(".heart2-clicker").on("click", () => {
     generateHeart(
-        // (window.event.clientX),
-        // (window.event.clientY),
-        0,
-        0,
-        (15 + Math.random() * 20),
-        (1 - Math.round(Math.random()) * 2),
-        (Math.random() * Math.random() * 0.8 + 0.2)
-    )
-    $("#num-hearts").text(hearts.length)
-}
+        (15 + Math.random() * 30),              // x bound
+        (1 - Math.round(Math.random()) * 2),    // x direction
+        ~~(Math.random() * HEART_CICKER_WIDTH)  // x start
+      )
+  })
+})
+
+
+// AWS.config.region = 'us-west-1'
+// AWS.config.credentials = new AWS.Credentials({
+//     accessKeyId: "AKIAZDBDBAHOLE5TGKGF",
+//     secretAccessKey: "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"
+// });
+//
+// const bucket = new AWS.S3({
+//     params: {
+//         Bucket: "fight-rona",
+//         Key: "click-count.json"
+//     }
+// });
 
 /**
  * The likes feature works like this, the user clicks the likes btn repeatedly
