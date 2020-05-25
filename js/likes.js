@@ -6,8 +6,8 @@ let before = Date.now()
 requestAnimationFrame(frame)
 
 function generateHeart(xBound, xDirection, xStart) {
-    const $heart = $('<img src="/img/heart.svg" class="heart2">')
-                    .appendTo(".heart2-clicker")
+    const $heart = $('<img src="/img/heart.svg" class="heart-small">')
+                    .appendTo(".likes-clicker")
 
     $heart.data("time", DURATION)
     $heart.data("x", xStart)
@@ -48,10 +48,10 @@ function frame() {
     requestAnimationFrame(frame)
 }
 
-const HEART_CICKER_WIDTH = 80
+const HEART_CICKER_WIDTH = 120
 // TODO: move this out to custom.js
 $(document).ready(() => {
-  $(".heart2-clicker").on("click", () => {
+  $(".likes-clicker").on("click", () => {
     generateHeart(
         (15 + Math.random() * 30),              // x bound
         (1 - Math.round(Math.random()) * 2),    // x direction

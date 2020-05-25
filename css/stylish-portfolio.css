@@ -363,97 +363,66 @@ footer {
     padding: 100px 0;
 }
 
-/* Styling for the Show Your Support button */
-#heart-container {
-    position: relative;
-    width: 100%;
-    padding: 40px 0 0 0;
+.likes {
+  width: 100%;
 }
-#heart-clicker {
-    overflow: visible;
-    padding-left: 0;
-    width: 4.4em;
-    margin-bottom: 2em;
-    transition: width 0.5s ease-in-out 0.3s, margin 0.5s linear 0s;
-}
-/* #heart-clicker > p.first-p {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    color: rgba(0,0,0,0);
-    margin: 0;
-    height: 3.2em;
-    padding: 1em 0;
-    width: 13em;
-    transition: all 0.5s;
-    transition-delay: 0.3s;
-}
-#heart-clicker > p.first-p + p {
-    text-align: right;
-    width: 12em;
-    transition: all 0.5s;
-    transition-delay: 0s;
-    color: rgba(0,0,0,0);
-    transition-timing-function: linear;
-    height: 0em;
-    padding: 0;
-    margin: 0;
-}
-#heart-clicker:hover > p.first-p + p {
-    transition-delay: 0.3s;
-    color: rgba(0,0,0,1);
-    height: 2em;
-}
-#heart-clicker:hover > p.first-p {
-    transition-delay: 0s;
-    color: rgba(0,0,0,1);
-}
-#heart-clicker:hover {
-    width: 15em;
-    margin-bottom: 0;
-    transition: width 0.5s ease-in-out 0s, margin 0.5s linear 0.3s;
-}
-#heart-clicker > p.first-p::before {
-    content: '❤ ';
-    color: black;
-} */
 
-.heart2 {
+.likes-clicker {
+  margin: auto;
+  width: 150px;
+  height: auto;
+
+  position: relative;
+}
+
+.heart-small {
   display: block;
-  height: 80px;
-  width: 80px;
+  height: 30px;
+  width: 30px;
 
   z-index: 9999;
-  /* animation : heartfade 6s linear; */
-  position : relative;
+  animation: fade 3s ease 0s 1 normal none running;
+  position : absolute;
 }
 
-.heart {
-    z-index : 999;
-    animation : heartfade 6s linear;
-    position : relative;
-}
-.heart:before, .heart:after {
-    content : "";
-    background-color : #fc2a62;
-    position : absolute;
-    height : 30px;
-    width : 45px;
-    border-radius : 15px 0px 0px 15px;
-}
-.heart:before {
-    transform : rotate(45deg);
-}
-.heart:after {
-    left : 40.5px;
-    transform : rotate(135deg);
+.heart-big {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  animation: pulsate 2s ease-out;
+  animation-iteration-count: infinite;
+  opacity: 0;
+  z-index: 999;
+
 }
 
-@keyframes heartfade {
+.likes-count {
+  font-size: 50px;
+}
+
+@keyframes fade {
     0% {
         opacity : 1;
     }
-    50% {
+
+    75% {
+        opacity :  0.7
+    }
+
+    100% {
         opacity : 0;
+    }
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1.0, 1.0); opacity: 1.0;
+    }
+    50% {
+        transform: scale(0.90, 0.90); opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.0, 1.0); opacity: 1.0;
     }
 }
 
