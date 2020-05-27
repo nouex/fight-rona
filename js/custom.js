@@ -73,3 +73,8 @@ $.fn.triggerOnceWhenVisible = function triggerOnceWhenVisible(eventName) {
 
 $("#map").triggerOnceWhenVisible("map-visible")
 // $(".callout").triggerOnceWhenVisible("callout-visible")
+
+$(document).ready(() => {
+  $(".likes-clicker").on("click", createHeart)
+  $(".heart-big").on("click", heartOnClick)
+})
