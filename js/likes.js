@@ -83,12 +83,12 @@ function heartOnClick () {
 
 async function updateClickCount() {
   const deltaLikes = totalLikes - totalLikesRecorded
-  const res = await axios.get(`http://ec2-54-151-23-7.us-west-1.compute.amazonaws.com:3000?clicks=${deltaLikes}`)
+  const res = await axios.get(`https://ec2-54-151-23-7.us-west-1.compute.amazonaws.com:3000?clicks=${deltaLikes}`)
   totalLikesRecorded += deltaLikes
 }
 
 async function initClickCount() {
-  const res = await axios.get('http://fight-rona.s3-us-west-1.amazonaws.com/click-count.json')
+  const res = await axios.get('https://fight-rona.s3-us-west-1.amazonaws.com/click-count.json')
   totalLikes = totalLikesRecorded = res.data.count
   setTotalLikes(totalLikes)
 }
