@@ -532,12 +532,6 @@ footer {
     .header h1, .header h3 {
         max-width: 70%;
     }
-    div.articles > a, div.portfolio-items > a {
-        transform: scale(0.8);
-    }
-    section#map > div.bar-container > svg {
-        height: 255px;
-    }
     g.c3-axis-y > g.tick:nth-of-type(odd) {
         display: none;
     }
