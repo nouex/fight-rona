@@ -12,13 +12,8 @@
 4. browse to http://localhost:4000
 
 ## Checklist
-### Features
-- [ ] add more articles from here https://docs.google.com/document/d/1VJfE7tEGbUoWmwQ4-fqd-LSPWXjJmUkhfxLbnTK-ABg/edit?ts=5eb56aa1
-- [ ] add new #DoingMyPart section, see `collage` branch for example (Amauri)
-- [ ] add floating likes (Jacob)
-
-### Bugs and Small Changes
-- [ ] someone mentioned the blue background doesn't look good, especially with the articles, try something else 🤷
-- [ ] after an article is hovered it loses it's margin
-- [ ] clickable area for circles overflows
-- [ ] there is no spacing between lines in .portfolio
+- [ ] add new #DoingMyPart section, see `collage` branch for example (Jacob)
+- [ ] floating likes counter (Amauri)
+- [ ] show a page loader while resources are loading
+      e.g. https://css-tricks.com/lets-make-a-fancy-but-uncomplicated-page-loader/
+- [ ] BUG: in the "Here's How You Can Help" section, if you hover slightly outside a circle it will activate the link. It should only do it when you're over the circle.
