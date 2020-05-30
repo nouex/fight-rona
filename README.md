@@ -14,6 +14,7 @@
 ## Checklist
 - [ ] add new #DoingMyPart section, see `collage` branch for example (Jacob)
 - [ ] floating likes counter (Amauri)
+- [ ] work on the logo (Zach)
 - [ ] show a page loader while resources are loading
       e.g. https://css-tricks.com/lets-make-a-fancy-but-uncomplicated-page-loader/
 - [ ] BUG: in the "Here's How You Can Help" section, if you hover slightly outside a circle it will activate the link. It should only do it when you're over the circle.
