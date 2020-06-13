@@ -4,6 +4,18 @@
   {% include head.html %}
 
 <body>
+  {% include scripts.html %}
+
+  <div class="fakeLoader"></div>
+  <script>
+    $(document).ready(function () {
+        $(".fakeLoader").fakeLoader({
+            bgColor: '#54A6CE',
+            spinner:"spinner1",
+            timeToHide: "3000"
+        });
+    });
+  </script>
 
   {% include header.html %}
   {% include about.html %}
@@ -12,8 +24,6 @@
   {% include portfolio.html %}
   {% include likes.html %}
   {% include footer.html %}
-  {% include scripts.html %}
-
 </body>
 
 </html>
