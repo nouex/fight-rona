@@ -17,4 +17,3 @@
   * improve UI
 - [ ] make icon rounded in floating likes (Zach)
 - [ ] bug: after Zach's fix, the bottom links are oval on mobile
-- [ ] bug: likes count isn't up-to-date on a refresh on mobile, browser could be caching idk
