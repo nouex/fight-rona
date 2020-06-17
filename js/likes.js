@@ -13,7 +13,7 @@ requestAnimationFrame(frame)
 
 function generateHeart(xBound, xDirection, xStart) {
     const showFavicon = !(totalLikes % 5)
-    const imgSrc = showFavicon ? "/img/favicon2.ico" : "/img/heart.svg"
+    const imgSrc = showFavicon ? "/img/favicon2-circle.png" : "/img/heart.svg"
     const $heart = $(`<img src="${imgSrc}" class="heart-small">`)
                     .appendTo(".likes-clicker")
 
@@ -83,7 +83,7 @@ function heartOnClick () {
 
 async function updateClickCount() {
   const deltaLikes = totalLikes - totalLikesRecorded
-  const res = await axios.get(`https://ec2-54-151-23-7.us-west-1.compute.amazonaws.com?clicks=${deltaLikes}`)
+  const res = await axios.get(`https://fightcoronabackend.com?clicks=${deltaLikes}`)
   totalLikesRecorded += deltaLikes
 }
 

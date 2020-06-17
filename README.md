@@ -12,13 +12,7 @@
 4. browse to http://localhost:4000
 
 ## Checklist
-### Features
-- [ ] add more articles from here https://docs.google.com/document/d/1VJfE7tEGbUoWmwQ4-fqd-LSPWXjJmUkhfxLbnTK-ABg/edit?ts=5eb56aa1
-- [ ] add new #DoingMyPart section, see `collage` branch for example (Amauri)
-- [ ] add floating likes (Jacob)
-
-### Bugs and Small Changes
-- [ ] someone mentioned the blue background doesn't look good, especially with the articles, try something else 🤷
-- [ ] after an article is hovered it loses it's margin
-- [ ] clickable area for circles overflows
-- [ ] there is no spacing between lines in .portfolio
+- [ ] add new #DoingMyPart section, see `collage` branch for example (Jacob)
+- [ ] floating likes counter (Amauri)
+  * improve UI
+- [ ] bug: after Zach's fix, the bottom links are oval on mobile
