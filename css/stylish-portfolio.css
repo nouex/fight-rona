@@ -504,7 +504,15 @@ footer {
   animation-iteration-count: infinite;
   opacity: 0;
   z-index: 999;
+  /* transition: transform 0.5s; */
+}
 
+.heart-big:hover {
+  animation: 999999s step-start fade;
+}
+
+.heart-big:active {
+  transform: scale(1.1);
 }
 
 .likes-count {
