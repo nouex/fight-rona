@@ -65,7 +65,7 @@ function frame() {
 }
 
 function setTotalLikes(totalLikes) {
-  $(".likes-count").text(String(totalLikes).toLocaleString())
+  $(".likes-count").text(Number(totalLikes).toLocaleString())
 }
 
 function heartOnClick () {
