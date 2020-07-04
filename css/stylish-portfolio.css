@@ -515,10 +515,6 @@ footer {
   transform: scale(1.1);
 }
 
-.likes-count {
-  font-size: 50px;
-}
-
 @keyframes fade {
     0% {
         opacity : 1;

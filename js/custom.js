@@ -70,5 +70,4 @@ $(document).ready(function () {
 
 $(document).ready(() => {
   $(".likes-clicker").on("click", createHeart)
-  $(".heart-big").on("click", heartOnClick)
 })
