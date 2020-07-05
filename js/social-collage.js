@@ -56,6 +56,7 @@ function EnlargePic(elem) {
     }
     let a = document.getElementById('img-show')
     let b = document.getElementById('partial-color')
+    let c = document.getElementById('close-img')
     a.src = elem.src
     a.style.transition = 'all 0s linear'
     a.style.top = (mouse.y-(256/2))+'px'
@@ -65,7 +66,10 @@ function EnlargePic(elem) {
     a.style.top = 'calc(50% - 128px)'
     a.style.left = 'calc(50% - 128px)'
     a.style.transition = 'all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)'
+    b.style.width = '100%'
+    b.style.height = '100%'
     b.style.background = 'rgba(0,0,0,0.5)'
+    // continue here
 }
 
 let some_iterator = ''
