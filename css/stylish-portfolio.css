@@ -476,6 +476,7 @@ footer {
 .likes {
   width: 100%;
   padding-top: 50px;
+  padding-bottom: 60px;
 }
 
 .likes-clicker {
@@ -496,12 +497,19 @@ footer {
   position : absolute;
 }
 
+.heart-back {
+    background: radial-gradient(pink, transparent 70%);
+    margin: 0 auto;
+    height: 120px;
+    width: 120px;
+}
 .heart-big {
   width: 120px;
   height: 120px;
   border-radius: 50%;
   animation: pulsate 2s ease-out;
   animation-iteration-count: infinite;
+  padding-top: 25px;
   opacity: 0;
   z-index: 999;
 

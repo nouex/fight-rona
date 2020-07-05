@@ -1,11 +1,21 @@
 #social-collage {
     margin: 30px auto;
-    width: 800px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    width: 90%;
+}
+#social-collage > h1 {
+    text-align: center;
 }
 #collage-grid {
     display: grid;
-    grid-template-columns: repeat(8, 100px);
+    padding-top: 20px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
     grid-gap: 20px;
+    height: 780px;
 }
 #collage-grid > * {
     padding: 10px;
@@ -13,16 +23,147 @@
     border: none;
     background: #dddddd;
 }
-.grid-large {
-    grid-column: span 4;
-    grid-row: span 4;
+.social-grid-item {
+    display: grid;
+    grid-template-columns: 50px auto;
+    grid-template-rows: 50px auto 20px;
+    justify-items: center;
+    align-items: center;
+    grid-gap: 10px;
+    height: 100%;
+    width: 100%;
 }
-.grid-medium {
+.social-grid-item > img {
+    width: 50px;
+    height: 50px;
+}
+.social-grid-item > h4 {
+    text-align: left;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.social-grid-item > .post-content {
+    overflow-y: auto;
     grid-column: span 2;
-    grid-row: span 2;
+    display: block;
+    height: calc(220px - 90px);
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 5px;
 }
-.grid-small {
-    grid-column: span 1;
-    grid-row: span 1;
+.social-grid-item:nth-of-type(7) > .post-content {
+    height: calc(480px - 90px);
+}
+.social-grid-item > *::-webkit-scrollbar {
+    width: 3px;
+}
+.social-grid-item > *::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+.social-grid-item:hover > *::-webkit-scrollbar-track {
+    background-color: #F0F0F0;
+}
+.social-grid-item > *::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 5px;
+}
+.social-grid-item > div.post-footer {
+    background-color: #dddddd;
+    grid-column: span 2;
+    width: 100%;
+}
+.social-grid-item:nth-of-type(1) {
+    grid-column: span 5;
+}
+.social-grid-item:nth-of-type(2) {
+    grid-column: span 3;
+}
+.social-grid-item:nth-of-type(3) {
+    grid-column: span 4;
+}
+.social-grid-item:nth-of-type(4) {
+    grid-column: span 3;
+}
+.social-grid-item:nth-of-type(5) {
+    grid-column: span 3;
+}
+.social-grid-item:nth-of-type(6) {
+    grid-column: span 3;
+}
+.social-grid-item:nth-of-type(7) {
+    grid-column: 10 / span 3;
+    grid-row: 2 / span 2;
+}
+.social-grid-item:nth-of-type(8) {
+    grid-column: span 4;
+}
+.social-grid-item:nth-of-type(9) {
+    grid-column: span 5;
 }
 
+#partial-color {
+    position: fixed;
+    top: 0; left: 0;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    transition: background 0.5s;
+}
+#img-show {
+    width: 256px;
+    height: 256px;
+    position: fixed;
+}
+#img-show.reg {
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.5s, opacity 0.5s;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+#img-show.large {
+    opacity: 1;
+    transform: scale(1);
+    transition: top 0.5s, left 0.5s;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@media screen and (max-width: 1060px) {
+    #collage-grid {
+        display: grid;
+        height: calc((240px + 20px) * 6);
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(6, calc(240px));
+    }
+    #collage-grid > .social-grid-item {
+        grid-column: span 1;
+    }
+    .social-grid-item:nth-of-type(4),
+    .social-grid-item:nth-of-type(6) {
+        grid-row: span 2;
+    }
+    .social-grid-item:nth-of-type(4) > .post-content,
+    .social-grid-item:nth-of-type(6) > .post-content {
+        height: calc(480px - 90px);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #collage-grid {
+        display: block;
+        height: calc((240px + 20px) * 9);
+    }
+    #collage-grid > .social-grid-item {
+        margin: 0 auto 20px;
+        min-width: 50%;
+        max-width: 80%;
+        height: 240px;
+    }
+    .social-grid-item > .post-content,
+    .social-grid-item:nth-of-type(4) > .post-content,
+    .social-grid-item:nth-of-type(6) > .post-content,
+    .social-grid-item:nth-of-type(7) > .post-content {
+        height: calc(240px - 110px);
+    }
+}
