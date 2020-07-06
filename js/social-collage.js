@@ -49,27 +49,43 @@ function ChangePosts() {
 
 /** This function will allow the user to click the images
  *  on the post and it will enlage it (or so it will seem) **/
+var returnX = 0
+var returnY = 0
 function EnlargePic(elem) {
-    let mouse = {
-        'x': event.clientX,
-        'y': event.clientY
-    }
-    let a = document.getElementById('img-show')
-    let b = document.getElementById('partial-color')
-    let c = document.getElementById('close-img')
+    var a = document.getElementById('img-show')
+    var b = document.getElementById('partial-color')
     a.src = elem.src
-    a.style.transition = 'all 0s linear'
-    a.style.top = (mouse.y-(256/2))+'px'
-    a.style.left = (mouse.x-(256/2))+'px'
-    a.style.transition = 'all 0s linear'
-    a.className = 'large'
-    a.style.top = 'calc(50% - 128px)'
-    a.style.left = 'calc(50% - 128px)'
-    a.style.transition = 'all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)'
-    b.style.width = '100%'
-    b.style.height = '100%'
-    b.style.background = 'rgba(0,0,0,0.5)'
-    // continue here
+    a.style.transition = 'all 0.01s linear'
+    a.style.top = (event.clientY-(512/2))+'px'
+    a.style.left = (event.clientX-(512/2))+'px'
+    returnX = (event.clientX-(512/2))
+    returnY = (event.clientY-(512/2))
+    a.style.transition = 'all 0.01s linear'
+    setTimeout(() => {
+        a.style.transition = 'all 0.5s ease-in-out'
+        a.style.opacity = '1'
+        a.style.top = 'calc(50%)'
+        a.style.left = 'calc(50%)'
+        a.style.transform = 'scale(1) translate(-50%, -50%)'
+        b.style.width = '100%'
+        b.style.height = '100%'
+        b.style.background = 'rgba(0,0,0,0.7)'
+    }, 30);
+}
+function ClosePic() {
+    var a = document.getElementById('img-show')
+    var b = document.getElementById('partial-color')
+    a.style.transition = 'all 0.5s ease-in-out'
+    a.style.transform = 'scale(0) translate(0%, 0%)'
+    a.style.left = returnX+'px'
+    a.style.top = returnY+'px'
+    setTimeout(() => {
+        b.style.background = 'transparent'
+        setTimeout(() => {
+            b.style.width = '0%'
+            b.style.height = '0%'
+        }, 500);
+    }, 500);
 }
 
 let some_iterator = ''

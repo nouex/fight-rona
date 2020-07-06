@@ -33,15 +33,20 @@
     height: 100%;
     width: 100%;
 }
-.social-grid-item > img {
+.social-grid-item > img.show-img {
     width: 50px;
     height: 50px;
+    object-fit: cover;
+    object-position: center;
 }
 .social-grid-item > h4 {
     text-align: left;
     width: 100%;
     padding: 0;
     margin: 0;
+}
+.post-content img.show-img {
+    max-width: 40%;
 }
 .social-grid-item > .post-content {
     overflow-y: auto;
@@ -110,23 +115,32 @@
     width: 0%;
     background: transparent;
     transition: background 0.5s;
+    overflow: hidden;
+}
+#close-img {
+    background: rgba(255,255,255,0.3);
+    border-bottom-left-radius: 50%;
+    padding: 0.4em 0.8em 0.8em 1em;
+    transition: all 0.5s;
+    position: absolute;
+    font-size: 16px;
+    color: black;
+    display: block;
+    right: 0;
+    top: 0;
+}
+#close-img:hover {
+    cursor: pointer;
+    background: rgba(255,255,255,0.6);
 }
 #img-show {
-    width: 256px;
-    height: 256px;
     position: fixed;
-}
-#img-show.reg {
-    opacity: 0;
+    max-width: 512px;
+    max-height: 512px;
+    object-fit: cover;
     transform: scale(0);
-    transition: transform 0.5s, opacity 0.5s;
-    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-#img-show.large {
-    opacity: 1;
-    transform: scale(1);
-    transition: top 0.5s, left 0.5s;
-    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    object-position: center;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 @media screen and (max-width: 1060px) {
