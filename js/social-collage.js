@@ -2,7 +2,7 @@
 /** The array above we may substitute with a jquery/ajax/http
  *  request. It may be easier to use the array... especially
  *  if we are going to do the ChangePosts() function. **/
-var some_social_posts = [
+const some_social_posts = [
     /** Example: **/
     /*{
         // Any image really, it could be the posters profile pic or
@@ -19,14 +19,13 @@ var some_social_posts = [
 ]
 
 
-if ( some_social_posts.length > 10 ) {
-    /**  **/
-    const posts_start = Math.floor( Math.random() * ( some_social_posts.length - 0.1 ) )
-    const posts_end = ( posts_start + 10 ) % ( some_social_posts.length - 1 )
-}
-else {
-    /*alert("ERROR: Posts under limit")*/
-}
+/** This will allow us to go through the posts without
+ *  messing up the original array of posts **/
+var get_posts = some_social_posts
+
+/** This is a maybe... It will only be used if we
+ *  have the posts change during the page viewing **/
+var posts2return = []
 
 
 /** This function will be called once the first post element
