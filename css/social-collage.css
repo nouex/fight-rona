@@ -46,7 +46,10 @@
     margin: 0;
 }
 .post-content img.show-img {
-    max-width: 40%;
+    max-width: 90%;
+    display: block;
+    margin: 2px auto;
+    padding-right: 2px;
 }
 .social-grid-item > .post-content {
     overflow-y: auto;
