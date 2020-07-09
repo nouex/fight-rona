@@ -56,6 +56,7 @@
     grid-column: span 2;
     display: block;
     height: calc(220px - 90px);
+    padding-right: 5px;
     width: 100%;
     padding: 0;
     margin: 0;
