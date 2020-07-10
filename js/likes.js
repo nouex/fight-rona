@@ -6,8 +6,6 @@ const HEART_CICKER_WIDTH = 120 // NOTE: must match the css with prop
 const hearts = []
 let before = Date.now()
 let totalLikes = null
-let totalLikesRecorded = null
-let timeoutId = null
 
 requestAnimationFrame(frame)
 
@@ -26,6 +24,7 @@ function generateHeart(xBound, xDirection, xStart) {
     $heart.get(0).style.top = "0px"
 
     hearts.push($heart)
+    totalLikes++
 
     return $heart
 }
@@ -63,35 +62,3 @@ function frame() {
 
     requestAnimationFrame(frame)
 }
-
-function setTotalLikes(totalLikes) {
-  $(".likes-count").text(String(totalLikes).toLocaleString())
-}
-
-function heartOnClick () {
-  if(timeoutId !== null) clearTimeout(timeoutId)
-
-  timeoutId = setTimeout(
-    () => {
-      updateClickCount()
-      timeoutId = null
-    }, MS_TIL_UPDATE)
-
-  totalLikes += 1
-  setTotalLikes(totalLikes)
-}
-
-async function updateClickCount() {
-  const deltaLikes = totalLikes - totalLikesRecorded
-  const res = await axios.get(`https://fightcoronabackend.com?clicks=${deltaLikes}`)
-  totalLikesRecorded += deltaLikes
-}
-
-async function initClickCount() {
-  const res = await axios.get('https://fight-rona.s3-us-west-1.amazonaws.com/click-count.json')
-  totalLikes = totalLikesRecorded = res.data.count
-  setTotalLikes(totalLikes)
-}
-
-// FIXME: figure out how to use async cbs in $(document).on("ready")
-initClickCount()

@@ -254,7 +254,7 @@ hr.small {
   width: 350px;
   height: 250px;
   margin: 3px;
-  padding: 45px 12px 20px;
+  padding: 60px 12px;
 
   background-size: cover;
   color: white;
@@ -512,11 +512,15 @@ footer {
   padding-top: 25px;
   opacity: 0;
   z-index: 999;
-
+  /* transition: transform 0.5s; */
 }
 
-.likes-count {
-  font-size: 50px;
+.heart-big:hover {
+  animation: 999999s step-start fade;
+}
+
+.heart-big:active {
+  transform: scale(1.1);
 }
 
 @keyframes fade {

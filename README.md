@@ -13,6 +13,6 @@
 
 ## Checklist
 - [ ] add new #DoingMyPart section, see `collage` branch for example (Jacob)
-- [ ] floating likes counter (Amauri)
-  * improve UI
-- [ ] bug: after Zach's fix, the bottom links are oval on mobile
+- [ ] improve UI
+- [ ] no duplicate stories (Amauri)
+- [ ] bug: after Zach's fix, the bottom links are oval on mobile (Zach)
