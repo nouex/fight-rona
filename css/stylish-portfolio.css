@@ -476,6 +476,7 @@ footer {
 .likes {
   width: 100%;
   padding-top: 50px;
+  padding-bottom: 60px;
 }
 
 .likes-clicker {
@@ -496,12 +497,19 @@ footer {
   position : absolute;
 }
 
+.heart-back {
+    background: radial-gradient(pink, transparent 70%);
+    margin: 0 auto;
+    height: 120px;
+    width: 120px;
+}
 .heart-big {
   width: 120px;
   height: 120px;
   border-radius: 50%;
   animation: pulsate 2s ease-out;
   animation-iteration-count: infinite;
+  padding-top: 25px;
   opacity: 0;
   z-index: 999;
   /* transition: transform 0.5s; */
@@ -545,12 +553,6 @@ footer {
 @media screen and (max-width: 380px) {
     .header h1, .header h3 {
         max-width: 70%;
-    }
-    div.articles > a, div.portfolio-items > a {
-        transform: scale(0.8);
-    }
-    section#map > div.bar-container > svg {
-        height: 255px;
     }
     g.c3-axis-y > g.tick:nth-of-type(odd) {
         display: none;
